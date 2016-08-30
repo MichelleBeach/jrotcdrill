@@ -1,0 +1,83 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/competitions" for 127.0.0.1 at 2016-08-30 13:29:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompetitionsController#index as HTML
+  [1m[35mCompetition Load (0.1ms)[0m  SELECT "competitions".* FROM "competitions"
+  Rendered competitions/index.html.erb (6.3ms)
+Completed 200 OK in 27ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/competitions/1/edit" for 127.0.0.1 at 2016-08-30 13:29:39 -0400
+Processing by CompetitionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompetition Load (0.2ms)[0m  [1mSELECT  "competitions".* FROM "competitions" WHERE "competitions"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered competitions/_form.html.erb (18.8ms)
+  Rendered competitions/edit.html.erb (21.3ms)
+Completed 200 OK in 30ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/competitions/1" for 127.0.0.1 at 2016-08-30 13:29:48 -0400
+Processing by CompetitionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"28TjFZvZvy1BzseRJCfa+jXueXg4XgGB/gPW75UZONT0JdFle2BPRV7q5Bn5QXo4EaGYPhgOzdB80db4w6QTMg==", "competition"=>{"name"=>"Nations Ford JROTC Competition", "c_date(1i)"=>"2016", "c_date(2i)"=>"8", "c_date(3i)"=>"30"}, "commit"=>"Update Competition", "id"=>"1"}
+  [1m[35mCompetition Load (0.3ms)[0m  SELECT  "competitions".* FROM "competitions" WHERE "competitions"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/competitions/1
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/competitions/1" for 127.0.0.1 at 2016-08-30 13:29:48 -0400
+Processing by CompetitionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompetition Load (0.1ms)[0m  [1mSELECT  "competitions".* FROM "competitions" WHERE "competitions"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered competitions/show.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/competitions" for 127.0.0.1 at 2016-08-30 13:29:50 -0400
+Processing by CompetitionsController#index as HTML
+  [1m[35mCompetition Load (0.2ms)[0m  SELECT "competitions".* FROM "competitions"
+  Rendered competitions/index.html.erb (1.5ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/competitions/new" for 127.0.0.1 at 2016-08-30 13:29:53 -0400
+Processing by CompetitionsController#new as HTML
+  Rendered competitions/_form.html.erb (7.1ms)
+  Rendered competitions/new.html.erb (9.9ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/competitions" for 127.0.0.1 at 2016-08-30 13:30:03 -0400
+Processing by CompetitionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hm94sQGWjTlmT0PFoxs89iVCzR5fK74bLORNoLXOvMcxjkrB4S99UXlrYE1+fZw0AQ0sWH97ckquNk2343OXIQ==", "competition"=>{"name"=>"test comp", "c_date(1i)"=>"2017", "c_date(2i)"=>"8", "c_date(3i)"=>"30"}, "commit"=>"Create Competition"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "competitions" ("name", "c_date", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "test comp"], ["c_date", "2017-08-30"], ["created_at", "2016-08-30 17:30:03.510254"], ["updated_at", "2016-08-30 17:30:03.510254"]]
+  [1m[36m (196.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/competitions/2
+Completed 302 Found in 206ms (ActiveRecord: 198.3ms)
+
+
+Started GET "/competitions/2" for 127.0.0.1 at 2016-08-30 13:30:03 -0400
+Processing by CompetitionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompetition Load (0.1ms)[0m  SELECT  "competitions".* FROM "competitions" WHERE "competitions"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered competitions/show.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/competitions" for 127.0.0.1 at 2016-08-30 13:30:06 -0400
+Processing by CompetitionsController#index as HTML
+  [1m[36mCompetition Load (0.3ms)[0m  [1mSELECT "competitions".* FROM "competitions"[0m
+  Rendered competitions/index.html.erb (2.7ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/competitions.json" for 127.0.0.1 at 2016-08-30 13:30:26 -0400
+Processing by CompetitionsController#index as JSON
+  [1m[35mCompetition Load (0.8ms)[0m  SELECT "competitions".* FROM "competitions"
+  Rendered competitions/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.8ms)
